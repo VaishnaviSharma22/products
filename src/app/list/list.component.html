@@ -1,0 +1,143 @@
+<br><br><br><br><br>
+<nav style="margin-top: -100px; width: 100%;" class= "navbar navbar-expand-lg navbar-light bg-light">
+
+  <div class="container-fluid">
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a style=" margin-top: -31px ; position: fixed;" class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a style="margin-top: -31px; position: fixed;margin-left: 144px;" class="nav-link" href="#">Team</a>
+        </li>
+        <li style="margin-top: -31px; position: fixed;margin-left: 262px;" class="nav-item">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="d-flex align-items-center">
+
+      <!-- <a class="text-reset me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a> -->
+
+
+      <!-- <a
+        class="text-reset me-3 dropdown-toggle hidden-arrow"
+        href="#"
+        id="navbarDropdownMenuLink"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fas fa-bell"></i>
+        <span class="badge rounded-pill badge-notification bg-danger">1</span>
+      </a> -->
+      <!-- <ul
+        class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="navbarDropdownMenuLink"
+      >
+        <li>
+          <a class="dropdown-item" href="#">Some news</a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#">Another news</a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </li>
+      </ul> -->
+
+      <!-- <a
+        class="dropdown-toggle d-flex align-items-center hidden-arrow"
+        href="#"
+        id="navbarDropdownMenuLink"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+          src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+          class="rounded-circle"
+          height="25"
+          alt=""
+          loading="lazy"
+        />
+      </a> -->
+      <!-- <ul
+        class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="navbarDropdownMenuLink"
+      >
+        <li>
+          <a class="dropdown-item" href="#">My profile</a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#">Settings</a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#">Logout</a>
+        </li>
+      </ul> -->
+    </div>
+
+  </div>
+
+</nav>
+
+<div class="sidebar" style="position: fixed;">
+    <ul>
+      <li><a routerLink="/employee-management"><i class="fa fa-users">Employees</i></a></li>
+      <li><a routerLink="/HomeComponent"><i class="fa fa-home">Home</i></a></li>
+      <li><a routerLink="/ShopComponent"><i class="fa fa-shopping-cart">Shop</i></a></li>
+      <li><a routerLink="/orders"><i class="fa fa-cart-plus">order</i></a></li>
+      <li><a routerLink="/AccountComponent"><i class="fa fa-sliders-h">Account</i></a></li>
+      <li><a routerLink="/about"><i class="fa fa-question-circle">About</i></a></li>
+      <li><a routerLink="/contact"><i class="fa fa-envelope">Contact</i></a></li>
+      <li><a routerLink="/dashboard"><i class="fa fa-qrcode">Dashboard</i></a></li>
+    </ul>
+</div>
+
+<div style="margin-left: 500px;">
+    <h1 style="margin-left:50px">Product List</h1>
+    <input style="margin-left:320px;height:30px;width:70px;" type="button" id="btn" (click)="onAddClick()" class="btn btn-primary" value="Add New">
+
+    <table>
+
+        <thead>
+            <th scope="col">NAME</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <th scope="col">AMOUNT</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <th scope="col">ACTION</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let product of products">
+               <td>{{product.name | uppercase}}</td>
+               <br>
+               <br>
+               <td>{{product.amount}}</td>
+               <td> <button style="width:70px;" type="submit" (click)="delete(product)" class="btn btn-primary btn-block">Delete</button></td>&nbsp;
+               <td> <button style="width:70px;" type="submit" (click)="edit(product.id)" class="btn btn-primary btn-block">Update</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+
+<router-outlet></router-outlet>
+

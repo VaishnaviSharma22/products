@@ -1,0 +1,36 @@
+<input style="width: 25%; margin-left: 30%;" type="text" #myInput class="form-control"
+         placeholder="Search...." (click)="search(form.value)" />
+<div style="margin-left: 35%; margin-top: 5%;">
+  <h1 style="margin-left: 200px;font-family: 'Times New Roman', Times, serif">Employee Details</h1>
+  <button style="margin-left: 60%;" class="btn btn-primary" (click)="add()">Add Employee</button>
+<table>
+
+  <thead>
+      <th scope="col">ID &nbsp;</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <hr style="width: 1900%;">
+      <th scope="col">First name</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <th scope="col">Last name</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <th scope="col">Email</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <th scope="col">Mobile</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <th scope="col">Action</th>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let employee of employees | filter : filterString">
+         <td>{{employee.id }}</td>
+        <br><br><br><hr style="width: 1900%;">
+         <td>{{employee.fname }}</td>
+         <br><br>
+         <td>{{employee.lname }}</td>
+         <br><br>
+         <td>{{employee.email }}</td>&nbsp;
+         <br><br>
+         <td>{{employee.mobile }}</td>&nbsp;
+         <td><button class="btn btn-primary" (click)="delete(employee)">Delete</button></td>
+         <td><button class="btn btn-primary" (click)="update(employee.id)" >Update</button></td>
+       </tr>
+  </tbody>
+
+</table>
+</div>
+
